@@ -105,7 +105,7 @@ $cfg['AllowThirdPartyFraming'] = false;
  *
  * @global string $cfg['blowfish_secret']
  */
-$cfg['blowfish_secret'] = '';
+$cfg['blowfish_secret'] = '11111111111111111111111111111111444444444444444444444444444444444444';
 
 
 /*******************************************************************************
@@ -266,7 +266,7 @@ $cfg['Servers'][$i]['user'] = 'root';
  *
  * @global string $cfg['Servers'][$i]['password']
  */
-$cfg['Servers'][$i]['password'] = '';
+$cfg['Servers'][$i]['password'] = '123456';
 
 /**
  * Session to use for 'signon' authentication method
