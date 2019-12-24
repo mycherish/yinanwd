@@ -29,8 +29,8 @@ $i++;
 $cfg['Servers'][$i]['auth_type'] = 'HTTP';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'localhost';
-$cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = '123456';
 
 /**
  * phpMyAdmin configuration storage settings.
