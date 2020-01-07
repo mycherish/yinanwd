@@ -1,0 +1,87 @@
+$num: 200px;
+$transZ: 100px;
+@mixin transp($axis, $rotate, $bgcolor) {
+    @if $axis==x {
+        transform: rotateX( $rotate) translateZ($transZ);
+        background-color: $bgcolor;
+        border: 2px solid $bgcolor;
+    }
+    @else {
+        transform: rotateY( $rotate) translateZ($transZ);
+        background-color: $bgcolor;
+        border: 2px solid $bgcolor;
+    }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 30px auto;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: fixed;
+    perspective: 1000px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(-20deg) translateZ(-$transZ);
+    transform-origin: center center -100px;
+    animation: around 5s cubic-bezier(.94, -0.6, .45, 1.31) infinite;
+    div {
+        width: 195px;
+        height: 195px;
+        display: block;
+        margin: 0;
+        position: absolute;
+        a {
+            color: white;
+            font-size: 8em;
+            text-decoration: none;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    @each $face,
+    $axis,
+    $deg,
+    $bgcolor in (front, y, 0deg, rgba(0, 191, 255, .7)),
+    (back, x, 180deg, rgba(124, 252, 0, .7)),
+    (left, y, -90deg, rgba(255, 215, 0, .7)),
+    (right, y, 90deg, rgba(255, 69, 0, .7)),
+    (top, x, 90deg, rgba(255, 0, 157, 0.7)),
+    (bottom, x, -90deg, rgba(184, 111, 220, .7)) {
+        .#{$face} {
+            @include transp($axis, $deg, $bgcolor);
+        }
+    }
+}
+
+@keyframes around {
+    100% {
+        transform: rotateX(-15deg) rotateY(-380deg) translateZ(-$transZ);
+    }
+}
