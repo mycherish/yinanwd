@@ -19,7 +19,7 @@ h1 {
   width: 200px;
   height: 200px;
   margin: 0 auto;
-  position: fixed;
+  position: absolute;
   -webkit-perspective: 1000px;
           perspective: 1000px;
   top: 50%;
@@ -108,4 +108,18 @@ h1 {
     -webkit-transform: rotateX(-15deg) rotateY(-380deg) translateZ(-100px);
             transform: rotateX(-15deg) rotateY(-380deg) translateZ(-100px);
   }
+}
+
+footer {
+  background: #069e7d;
+  color: #d6d6d6;
+}
+footer p {
+  clear: both;
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid #656973;
+  height: 80px;
+  line-height: 80px;
+  color: #ebebeb;
 }
