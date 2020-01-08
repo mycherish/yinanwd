@@ -111,8 +111,11 @@ h1 {
 }
 
 footer {
-  background: #069e7d;
+  background: #232526;
   color: #d6d6d6;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
 }
 footer p {
   clear: both;
@@ -122,4 +125,23 @@ footer p {
   height: 80px;
   line-height: 80px;
   color: #ebebeb;
+}
+footer a {
+  color: #d6d6d6;
+}
+
+/* footer .footer-tips {
+  margin: 0;
+  height: auto;
+  line-height: normal;
+  padding: 30px 0 0 0;
+  border: none;
+  font-size: 12px;
+  line-height: 24px;
+} */
+footer .footer-tips {
+  border: none;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
 }
